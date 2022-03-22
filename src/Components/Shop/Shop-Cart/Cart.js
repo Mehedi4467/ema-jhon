@@ -1,6 +1,7 @@
 import React from 'react';
 import './Cart.css';
-const Cart = () => {
+const Cart = (props) => {
+
     return (
         <div>
             <h3 className='order-title'>Order Summery</h3>

@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 45px;
-    margin: 120px 70px;
+    margin: 70px 70px;
 }
 
 .shop-cart {
