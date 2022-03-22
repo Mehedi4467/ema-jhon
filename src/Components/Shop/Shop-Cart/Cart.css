@@ -1,0 +1,29 @@
+.order-title {
+    text-align: center;
+}
+
+.cart-calculator {
+    margin: 30px 0;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cart-btn {
+    text-align: center;
+}
+
+.cart-btn {
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 2px 70px;
+    border: none;
+    background-color: #FF3030;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.cart-review {
+    background-color: #FF9900;
+    padding: 2px 60px;
+}

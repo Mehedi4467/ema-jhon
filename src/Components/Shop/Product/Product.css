@@ -59,6 +59,9 @@
 }
 
 .btn-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     position: absolute;
     bottom: 0;
@@ -68,6 +71,10 @@
     cursor: pointer;
     border-radius: 0px 0px 8px 8px;
 
+}
+
+.btn-cart p {
+    margin-right: 10px;
 }
 
 .btn-cart:hover {

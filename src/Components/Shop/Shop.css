@@ -9,5 +9,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 45px;
-    margin: 120px 104px;
+    margin: 120px 70px;
+}
+
+.shop-cart {
+    background-color: rgba(255, 153, 0, 0.3);
+    height: 500px;
+    position: fixed;
+    border-radius: 10px;
+    right: 0;
+    padding: 0 20px;
 }
