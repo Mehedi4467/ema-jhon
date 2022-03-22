@@ -1,0 +1,24 @@
+.header {
+    background-color: #1C2B35;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    margin-left: 36px;
+
+}
+
+.main-nav a:hover {
+    color: orange;
+}
