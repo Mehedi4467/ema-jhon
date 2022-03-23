@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToCartLocal, getShoppingCart } from '../../utilities/addToCartLocal';
 import Product from './Product/Product';
 import Cart from './Shop-Cart/Cart';
 import './Shop.css';
@@ -12,11 +13,37 @@ const Shop = () => {
     }, []);
 
     const cartHandler = (product) => {
+        let newCart = [];
+        const exists = cart.find(cartProduct => cartProduct.id === product.id);
+        if (!exists) {
+            product.quantity = 1;
+            newCart = [...cart, product];
+        }
+        else {
+            const rest = cart.filter(cartProduct => cartProduct.id !== product.id);
+            product.quantity += 1;
+            newCart = [...rest, exists];
+        }
 
-        let newCart = [...cart, product];
         setCart(newCart);
+        addToCartLocal(product.id);
 
     };
+
+    useEffect(() => {
+        const storeCart = getShoppingCart();
+        const saveCart = [];
+        for (const id in storeCart) {
+            const storeProduct = products.find(product => product.id === id);
+            if (storeProduct) {
+                const quantity = storeCart[id];
+                storeProduct.quantity = quantity;
+                saveCart.push(storeProduct);
+
+            }
+        }
+        setCart(saveCart);
+    }, [products]);
 
     return (
         <div className='shop-container'>

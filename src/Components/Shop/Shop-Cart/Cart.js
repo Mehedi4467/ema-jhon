@@ -1,20 +1,19 @@
-import { text } from '@fortawesome/fontawesome-svg-core';
+
 import React from 'react';
-// import { productTotalPrice, tax, shippingCharge, grandTotal } from '../../../utilities/cartCalculation';
 import './Cart.css';
 const Cart = (props) => {
     const { cartProduct } = props;
-    const items = cartProduct.length;
 
-    const totalPrice = cartProduct.reduce((sum, current) => sum + current.price, 0);
+    const totalPrice = cartProduct.reduce((sum, current) => sum + current.price * current.quantity, 0);
     const shipping = cartProduct.reduce((sum, current) => sum + current.shipping, 0);
+    const quantity = cartProduct.reduce((sum, current) => sum + current.quantity, 0);
     const tax = (totalPrice * .1).toFixed(2);
     const grandTotal = totalPrice + shipping + +tax;
     return (
         <div>
             <h3 className='order-title'>Order Summery</h3>
             <div className='cart-calculator'>
-                <p>Selected Items: {items} </p>
+                <p>Selected Items: {quantity} </p>
                 <p>Total Price: $ {totalPrice}</p>
                 <p>Shipping Charge: ${shipping}</p>
                 <p>Tax: $ {tax}</p>
