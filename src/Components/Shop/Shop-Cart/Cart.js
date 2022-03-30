@@ -1,6 +1,7 @@
 
 import React from 'react';
 import './Cart.css';
+import { TrashIcon } from '@heroicons/react/solid'
 const Cart = (props) => {
     const { cartProduct } = props;
 
@@ -23,7 +24,10 @@ const Cart = (props) => {
             </div>
             <div>
                 <button className='cart-btn'>
-                    <p>Clear Cart</p>
+                    <div className='align-icon'>
+                        <p>Clear Cart</p>
+                        <TrashIcon className='trashIcon'></TrashIcon>
+                    </div>
 
                 </button><br></br>
                 <button className='cart-btn cart-review'>

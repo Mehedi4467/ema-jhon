@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useProduct } from '../../hooks/useProducts';
 import { addToCartLocal, getShoppingCart } from '../../utilities/addToCartLocal';
 import Product from './Product/Product';
 import Cart from './Shop-Cart/Cart';
 import './Shop.css';
+
 const Shop = () => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useProduct();
     const [cart, setCart] = useState([]);
-    useEffect(() => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(products => setProducts(products));
-    }, []);
+
 
     const cartHandler = (product) => {
         let newCart = [];
