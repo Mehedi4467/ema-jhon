@@ -31,7 +31,7 @@ const Cart = (props) => {
 
                 </button><br></br>
                 <button className='cart-btn cart-review'>
-                    <p>Review Order</p>
+                    {props.children}
                 </button>
             </div>
         </div >

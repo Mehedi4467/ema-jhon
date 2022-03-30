@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
 import { useProduct } from '../../hooks/useProducts';
 import { addToCartLocal, getShoppingCart } from '../../utilities/addToCartLocal';
@@ -39,7 +40,9 @@ const Shop = () => {
 
             </div>
             <div className='shop-cart'>
-                <Cart cartProduct={cart}></Cart>
+                <Cart cartProduct={cart}>
+                    <Link to='/review'>Review Order</Link>
+                </Cart>
 
             </div>
         </div >
