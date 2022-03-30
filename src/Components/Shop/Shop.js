@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useCart } from '../../hooks/useCart';
 import { useProduct } from '../../hooks/useProducts';
 import { addToCartLocal, getShoppingCart } from '../../utilities/addToCartLocal';
 import Product from './Product/Product';
@@ -7,7 +7,7 @@ import './Shop.css';
 
 const Shop = () => {
     const [products, setProducts] = useProduct();
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useCart(products);
 
 
     const cartHandler = (product) => {
@@ -28,20 +28,7 @@ const Shop = () => {
 
     };
 
-    useEffect(() => {
-        const storeCart = getShoppingCart();
-        const saveCart = [];
-        for (const id in storeCart) {
-            const storeProduct = products.find(product => product.id === id);
-            if (storeProduct) {
-                const quantity = storeCart[id];
-                storeProduct.quantity = quantity;
-                saveCart.push(storeProduct);
 
-            }
-        }
-        setCart(saveCart);
-    }, [products]);
 
     return (
         <div className='shop-container'>
@@ -52,7 +39,7 @@ const Shop = () => {
 
             </div>
             <div className='shop-cart'>
-                <Cart cartProduct={cart} key={cart.id}></Cart>
+                <Cart cartProduct={cart}></Cart>
 
             </div>
         </div >

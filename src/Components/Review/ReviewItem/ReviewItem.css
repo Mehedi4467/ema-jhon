@@ -1,0 +1,47 @@
+.order-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.item-body {
+    width: 571px;
+    border: 1px solid #95A0A7;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.item-body img {
+    width: 91px;
+
+}
+
+.img-body {
+    display: flex;
+    align-items: center;
+}
+
+.item-body {
+    display: flex;
+}
+
+.item-info-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item-info span {
+    color: orange;
+}
+
+.item-info p {
+    margin: 5px;
+}
+
+.item-main-body {
+    width: 50%;
+    margin: 10px auto;
+}
