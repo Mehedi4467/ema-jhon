@@ -25,3 +25,13 @@
 .main-nav a:hover {
     color: orange;
 }
+
+.main-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userProfile{
+   margin-left: 40px;
+
+}
