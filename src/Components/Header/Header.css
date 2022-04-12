@@ -26,6 +26,26 @@
     color: orange;
 }
 
+.main-nav button {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    margin-left: 36px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+.main-nav button:hover {
+    color: orange;
+}
+
 .main-nav{
     display: flex;
     justify-content: center;

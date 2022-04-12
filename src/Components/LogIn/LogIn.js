@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import gLogo from '../../images/google-logo.png';
 import './LogIn.css';
 import auth from '../../firebase.init';
@@ -10,8 +10,13 @@ const LogIn = () => {
     const [password, setPassword] = useState('');
 
     const [signInWithGoogle, user, loading] = useSignInWithGoogle(auth);
-    const [signInWithEmailAndPassword, user2, loading2] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user2, loading2, error] = useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate();
+    const location = useLocation();
+
+
+
+    const from = location.state?.from?.pathname || '/';
 
     const handelEmailBlur = (event) => {
         setEmail(event.target.value);
@@ -24,19 +29,17 @@ const LogIn = () => {
     const handelSubmitLogIn = (event) => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password);
-        console.log(user)
-
     }
 
 
-    if (user2) {
-        navigate('/');
+    if (user2 || user) {
+        navigate(from, { replace: true });
+    }
+    if (error) {
+        console.log(error.message);
     }
     const signInGoogle = () => {
         signInWithGoogle();
-        if (user) {
-            console.log(user);
-        }
     }
 
 
