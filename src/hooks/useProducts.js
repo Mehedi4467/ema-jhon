@@ -3,7 +3,8 @@ import { useEffect, useState } from "react"
 const useProduct = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('products.json')
+        const url = `http://localhost:5000/product`;
+        fetch(url)
             .then(res => res.json())
             .then(products => setProducts(products));
     }, []);
